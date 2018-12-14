@@ -1,0 +1,108 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+	<title>Ascensores</title>
+	
+	
+
+</head>
+<body>
+
+	<div class="container">
+		<head class="header" >			
+			<div class="row center-xs" style="background:#494949; color:white;">
+				<div class="col col-lg-3
+								col-md-3
+								col-xs-3">
+					<div class="box">
+						<img id="imgLogo" src="{% static "img/logo1.png" %}" alt="Aquí estaba el logo">
+						
+												
+					</div>					
+				</div>
+				<div class="col col-lg-3
+								col-md-3
+								col-xs-3">
+					<div class="box">
+					
+						<h1>Ascensores Web</h1>
+												
+					</div>					
+				</div>
+				<div class="col col-lg-3
+								col-md-3
+								col-xs-3">
+					<div id="eslogan" class="box">
+					
+						{% if user.is_authenticated %}
+						  Bienvenido {{ user.username }}!
+						  <a class="aNav" href="/aplicacion/salir">logout</a>
+						{% else %}
+						  <p>Usted no esta logeado</p>
+						  <a class="aNav" href="{% url 'login' %}">login</a>
+						{% endif %}
+												
+					</div>					
+				</div>
+			</div>
+		</head>
+
+		<nav>
+			<div class="row center-xs">
+				<div class="col col-lg-12
+								col-md-12
+								col-xs-12">
+					<div class="box">
+						<h2>Listado</h2>
+												
+					</div>					
+				</div>
+
+				
+			</div>
+		</nav>
+
+		<section>
+			<div class="row center-xs">
+				<div class="col col-lg-12
+								col-md-12
+								col-xs-12">
+					<div class="box">
+						
+					</div>
+				</div>				
+			</div>
+			<div class="row center-xs">
+				<div class="col col-lg-12
+								col-md-12
+								col-xs-12">
+					<div class="box">
+						<a class="aNav" href="/aplicacion/inicio">Volver</a>
+					</div>
+				</div>				
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="row xs">
+				<div class="col col-lg-4">
+					<div class="box">
+						<h3 class="boxFooter">Ascensores Web</h3>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+		</footer>
+		
+	</div>
+
+</body>
+</html>

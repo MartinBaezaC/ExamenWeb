@@ -1,0 +1,65 @@
+body{
+	background: azure;
+	font-family: helvetica;
+}
+
+#eslogan{
+	float: right;
+	border: solid; 
+	border-radius: 12px;
+}
+
+.imgMenu{
+	border-radius: 12px;
+}
+
+.secLogin{
+	border-radius: 12px;
+	background:#98ccd3;
+	color:white;
+}
+
+.container{
+	background: lightblue;
+}
+
+#nav{
+	background:green;
+}
+
+.aNav{	
+	display: grid;
+	background-color: #4a4a48;	
+	padding: 12px ;
+	text-decoration: none;
+	display: grid;	
+	color :	white;
+	margin: 12px;	
+	text-align: center;
+}
+
+.aNav:hover, .aNav:active{
+	background-color: #808080;
+}
+
+#imgLogo{
+	margin: 12px;
+	width: 56px;
+}
+
+img{
+	width: 75%;
+}
+
+.footer{
+	background: gray;
+}
+
+.boxFooter{
+	opacity: 0.5
+}
+
+.timeBox{
+	float: right;
+	
+}

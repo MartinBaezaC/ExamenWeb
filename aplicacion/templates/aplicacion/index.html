@@ -1,0 +1,135 @@
+{% load staticfiles %}
+{% load pwa %}
+<!DOCTYPE html>
+<html>
+<head>
+	{% progressive_web_app_meta %}
+	<meta charset="utf-8">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css">
+	<script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+	<title>Ascensores Web</title>
+	<script >
+		if ('caches' in window) {
+		  console.log("hay soporte");
+		}
+		else
+		{
+			console.log("noo hay soporte");
+		}
+		
+
+	</script>
+	
+
+</head>
+<body>		
+		<head class="header" >			
+			<div class="row center-xs" style="background:#494949; color:white;">
+				<div class="col col-lg-3
+								col-md-3
+								col-xs-3">
+					<div class="box">
+						<img id="imgLogo" src="{% static "img/logo1.png" %}" alt="Aquí estaba el logo">
+						
+												
+					</div>					
+				</div>
+				<div class="col col-lg-3
+								col-md-3
+								col-xs-3">
+					<div class="box">
+					
+						<h1>Ascensores Web</h1>
+												
+					</div>					
+				</div>
+				<div class="col col-lg-3
+								col-md-3
+								col-xs-3">
+					<div id="eslogan" class="box">
+					
+						{% if user.is_authenticated %}
+						  Bienvenido {{ user.username }}!
+						  <a class="aNav" href="/aplicacion/cambiar-contraseña">Cambiar contraseña</a>
+						  <a class="aNav" href="/aplicacion/salir">logout</a>
+						{% else %}
+						  <p>Usted no esta logeado</p>
+						  <a class="aNav" href="{% url 'login' %}">login</a>
+						{% endif %}
+												
+					</div>					
+				</div>
+			</div>
+		</head>
+
+		<nav>
+			<div class="row center-xs">
+				
+				
+				<div class="col col-lg-3
+								col-md-6
+								col-xs-12">
+					<div class="box">
+						<a class="aNav"  href="/aplicacion/inicio/orden">Registrar orden de trabajo</a>
+												
+					</div>					
+				</div>
+
+				<div class="col col-lg-3
+								col-md-6
+								col-xs-12">
+					<div class="box">
+						<a class="aNav"  href="/aplicacion/inicio/listado">Listado Ordenes de trabajo</a>
+										
+					</div>					
+				</div>		
+				<div class="col col-lg-3
+								col-md-6
+								col-xs-12">
+					<div class="box">
+						<a class="aNav"  href="/aplicacion/api-ascensores">Ocupa nuestra API</a>
+												
+					</div>					
+				</div>	
+			</div>
+		</nav>
+
+		<section class="section1">
+			<div class="row center-xs">
+				<div class="col col-lg-12
+								col-md-12
+								col-xs-12">
+					<div class="box">
+						<img class="imgMenu" src="{% static "img/ascensor1.jpg" %}" alt="Aquí habia una imagen">
+					</div>
+				</div>
+				
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="row xs">
+				<div class="col col-lg-6
+								col-md-6
+								col-xs-6">
+					<div class="box">
+						<h3 class="boxFooter">Ascensores Web</h3>				
+					</div>					
+				</div>		
+				<div class="col col-lg-6
+								col-md-6
+								col-xs-6">
+					<div class="timeBox">
+						<iframe src="http://free.timeanddate.com/clock/i6jm01y7/n232/tt0/tw0/tm1/ts1/tb4" frameborder="0" width="87" height="34"></iframe>				
+					</div>					
+				</div>			
+			</div>
+
+		</footer>
+</body>
+</html>
